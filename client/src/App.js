@@ -97,7 +97,7 @@ function App() {
 
   return (
     <>
-    <h1>Movie database he app</h1>
+    <h1>Movie database app</h1>
 {loginContent}
     <Router>
      <Movies path="/" movieData={data} addMovie={addMovie}></Movies>

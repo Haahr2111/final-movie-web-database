@@ -7,9 +7,9 @@ const bcrypt = require('bcryptjs');  // Used for hashing passwords!
 const users = [
   // These are just some test users with passwords.
   // The passwords are in clear text for testing purposes (don't do this in production).
-  { id: 0, username: "ras", password: '123' },
-  { id: 1, username: "mus", password: '1234' },
-  { id: 2, username: "har", password: '12345' },
+  { id: 0, username: "ras", password: 'ras123' },
+  { id: 1, username: "mus", password: 'mus123' },
+  { id: 2, username: "har", password: 'har123' },
 ];
 
 users.forEach(async user => {
