@@ -57,13 +57,14 @@ module.exports = (mongoose) => {
     }
 
  const getTitle =['Star Wars', 'TinTin', 'Bjergkøbing Grandpix', 'Indiana Jones', 'Django', 'Lord of the rings']
-    const testReviews =['Great Adventure', 'Very nice',
-      'Tintin always makes me hi hi', 'thats cool',
-      'Funny ride', 'could be better',
-      'That rip never gets old', 'The old ones are way better',
-      'Too much blood', 'not enough blood',
-      'The guy that plays frodo looks like a girl', 'Great movie'
+   
+ function testReviews() {
+  return ['Great Adventure', 'Very nice','Tintin always makes me hi hi', 'thats cool',
+      'Funny ride', 'could be better','That rip never gets old', 'The old ones are way better',
+      'Too much blood', 'not enough blood', 'The guy that plays frodo looks like a girl', 'Great movie'
     ]
+    [getRandomInt(0, 11)];
+  }
 
 function testRate() { 
   return ['','1','2','3','4','5','6','7','8','9','10'][getRandomInt(1, 10)];
@@ -80,9 +81,23 @@ function testRate() {
         genre:`Movie genre number ${i}`,
         release: `Movie release number ${i}`,
         reviews: [{
-          answer: testReviews[i],
+          answer: testReviews(),
           score: testRate() 
-        }]
+        }, 
+        {
+          answer: testReviews(),
+          score: testRate() 
+        },
+      { score: testRate() }, 
+      { score: testRate() }, 
+      { score: testRate() },
+      { score: testRate() },
+      { score: testRate() },
+      { score: testRate() },
+      { score: testRate() },
+      { score: testRate() }
+      ]
+    
       }
          )
          
