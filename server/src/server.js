@@ -26,7 +26,8 @@ app.use(express.static(path.resolve('..', 'client', 'build')));
 const openPaths = [
   // Open "/api/users/authenticate" for POST requests
   { url: "/api/users/authenticate", methods: ["POST"] },
-
+  // { url: "/api/movies", methods: ["POST"] },
+  // { url: "/api/reviews", methods: ["POST"] },
   // Open everything that doesn't begin with "/api"
   /^(?!\/api).*/gim,
 
@@ -66,7 +67,7 @@ const userRouter = require("./userRouter")(secret)
   app.use(express.static(path.resolve('..', 'client', 'build'))); 
   
   /**** Add routes ****/
-  app.use("/api/movies", routes);
+  app.use("/api", routes);
   app.use("/api/users", userRouter);
 
   // "Redirect" all non-API GET requests to React's entry point (index.html)

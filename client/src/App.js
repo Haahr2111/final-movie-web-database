@@ -59,8 +59,8 @@ function App() {
 
   
    async function addReview(id, answer, score){
-    setPostCount(postCount +1);
     console.log(answer);
+    setPostCount(postCount +1);
     //create object
     const newReview = {
       id:id,
