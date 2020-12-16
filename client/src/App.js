@@ -80,8 +80,11 @@ function App() {
     const data = await response.json();
     console.log(data);
   }
-
+// function logud() {
+//   authService.logout()
+// }
   async function login(username, password) {
+    setPostCount(postCount +1);
     try {
       const resp = await authService.login(username, password);
       console.log("Authentication:", resp.msg);

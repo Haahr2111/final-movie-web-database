@@ -2,6 +2,7 @@ Rasmus Haahr Pedersen
 WU-F20v - Advanced Web Programming 2020
 
 // Posts kan tillades med at fjerne kommentarene på openPath
+// login doesn't logout again
 
 Brugere: 
 { id: 0, username: "ras", password: 'ras123' },
