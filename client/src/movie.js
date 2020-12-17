@@ -1,14 +1,18 @@
 import React from "react";
 import {Link, useParams} from "@reach/router";
 import AddReview from "./AddReview";
+import AuthService from "./AuthService";
+
+const API_URL = process.env.REACT_APP_API;
+const authService = new AuthService(`${API_URL}/users/authenticate`);
+
 
 function Movie(props) {
 
     const params = useParams()
     const id = params.id;
     const movie = props.getMovie(id);
-
-
+    
     if (movie===undefined) return null 
 
     
@@ -23,7 +27,10 @@ function Movie(props) {
     })
 
    console.log(movie)
-
+   let loginAddreview = ""
+   if (authService.loggedIn()) {
+   loginAddreview = <AddReview id={id} addReview={props.addReview}></AddReview>
+  } 
     return (
 <>
 <h3>{movie.title}</h3>
@@ -32,7 +39,7 @@ function Movie(props) {
 <p><b>Genre: </b>{movie.genre}</p>
       <p><b>Description </b><br></br>{movie.description}</p>
     
-     <AddReview id={id} addReview={props.addReview}></AddReview>
+     {loginAddreview}
 
      <p><b>Reviews</b></p>
      <ul>{reviewList}</ul>

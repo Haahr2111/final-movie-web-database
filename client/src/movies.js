@@ -1,7 +1,10 @@
 import React from 'react';
 import {Link} from "@reach/router";
-
+import AuthService from "./AuthService";
 import AddMovie from "./AddMovie";
+
+const API_URL = process.env.REACT_APP_API;
+const authService = new AuthService(`${API_URL}/users/authenticate`);
 
 function Movies(props){
   
@@ -19,7 +22,10 @@ const movieData = props.movieData;
 
   const list = movieData.map(mapFunction);
   
-
+  let loginAddmovie = "";
+  if (authService.loggedIn()) {
+  loginAddmovie = <AddMovie addMovie={props.addMovie}></AddMovie>
+  }
   
     return(
         <>
@@ -27,8 +33,8 @@ const movieData = props.movieData;
       <ul>
         {list}
       </ul>
-        <AddMovie addMovie={props.addMovie}></AddMovie>
-        
+        {loginAddmovie}
+       
         </>
     )
 }

@@ -80,20 +80,22 @@ function App() {
     const data = await response.json();
     console.log(data);
   }
-// function logud() {
-//   authService.logout()
-// }
+function logud() {
+  authService.logout()
+  setPostCount(postCount +1);
+}
   async function login(username, password) {
-    setPostCount(postCount +1);
+    
     try {
       const resp = await authService.login(username, password);
       console.log("Authentication:", resp.msg);
+      setPostCount(postCount +1);
     } catch (e) {
       console.log("Login", e);
     }
   }
   
- let loginContent = <p>Is logged in</p>
+ let loginContent = <p>Is logged in <button onClick={logud}>Log out</button></p>
   if (!authService.loggedIn()) {
     loginContent = <Login login={login} />;
   } 

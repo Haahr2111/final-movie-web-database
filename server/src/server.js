@@ -26,8 +26,8 @@ app.use(express.static(path.resolve('..', 'client', 'build')));
 const openPaths = [
   // Open "/api/users/authenticate" for POST requests
   { url: "/api/users/authenticate", methods: ["POST"] },
-  // { url: "/api/movies", methods: ["POST"] },
-  // { url: "/api/reviews", methods: ["POST"] },
+  { url: "/api/movies", methods: ["POST"] },
+  { url: "/api/reviews", methods: ["POST"] },
   // Open everything that doesn't begin with "/api"
   /^(?!\/api).*/gim,
 
