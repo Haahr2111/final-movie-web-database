@@ -17,8 +17,12 @@ function Movie(props) {
 
     
     const reviewList= movie.reviews.map(e=> 
-        {return (
+
+        {
+            if (e.answer!='')
+            return (
         <>
+        
         <li key={e._id}><p>{e.answer}</p>
         <p>Rating: {e.score}</p>
         </li>

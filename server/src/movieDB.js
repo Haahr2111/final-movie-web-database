@@ -88,14 +88,22 @@ function testRate() {
           answer: testReviews(),
           score: testRate() 
         },
-      { score: testRate() }, 
-      { score: testRate() }, 
-      { score: testRate() },
-      { score: testRate() },
-      { score: testRate() },
-      { score: testRate() },
-      { score: testRate() },
-      { score: testRate() }
+      { answer: "",
+        score: testRate() }, 
+      { answer: "",
+        score: testRate() }, 
+      {answer: "",
+         score: testRate() },
+      { answer: "",
+        score: testRate() },
+      { answer: "",
+        score: testRate() },
+      { answer: "",
+        score: testRate() },
+      { answer: "",
+        score: testRate() },
+      { answer: "",
+        score: testRate() }
       ]
     
       }
