@@ -15,7 +15,14 @@ function Movie(props) {
     
     if (movie===undefined) return null 
 
+    const rateToint = movie.reviews.map(e=>{
+        const int = parseInt(e.score)
+        return int
+    })
     
+    const getAverageRate=rateToint.reduce((a,b)=>(a+b))/rateToint.length;
+
+
     const reviewList= movie.reviews.map(e=> 
 
         {
@@ -41,6 +48,7 @@ function Movie(props) {
     
     <p><b>Release:</b> {movie.release}</p>
 <p><b>Genre: </b>{movie.genre}</p>
+<p><b>Average Rating:</b> {getAverageRate}</p>
       <p><b>Description </b><br></br>{movie.description}</p>
     
      {loginAddreview}
