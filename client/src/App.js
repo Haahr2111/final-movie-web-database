@@ -49,6 +49,7 @@ function App() {
       method: 'POST', // or 'PUT'
       headers: {
         'Content-Type': 'application/json',
+        'Authorization':`Bearer ${authService.getToken()}`
       },
       body: JSON.stringify(newMovie),
     });
@@ -74,6 +75,7 @@ function App() {
       method: 'POST', // or 'PUT'
       headers: {
         'Content-Type': 'application/json',
+        'Authorization': `Bearer ${authService.getToken()}`
       },
       body: JSON.stringify(newReview),
     });
