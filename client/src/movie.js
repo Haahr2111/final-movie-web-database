@@ -31,7 +31,7 @@ function Movie(props) {
         <>
         
         <li key={e._id}>
-            <p><b>Written by: {authService.getUsername()}</b></p>
+            
             <p><b>Review:</b> {e.answer}</p>
         <p><b>Rating:</b> {e.score}</p>
         </li>
