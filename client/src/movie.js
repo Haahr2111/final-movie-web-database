@@ -36,6 +36,9 @@ function Movie(props) {
         </>
         )
     })
+    //last added first
+reviewList.sort();
+reviewList.reverse();
 
    console.log(movie)
    let loginAddreview = ""
